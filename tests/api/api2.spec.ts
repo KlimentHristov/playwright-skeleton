@@ -8,7 +8,8 @@ test('API returns different results for two different player users', async ({ re
   const [player1, player2] = playerUsers;
 
   // Примерен API endpoint, който приема userId като параметър
-  const url = 'https://api.publicapis.org/entries'; // Заменете с вашия реален endpoint
+  const url = 'https://api.publicapis.org/entries'; 
+  // Заменете с вашия реален endpoint
 
   // Първа заявка с player1
   const response1 = await new ApiRequestBuilder()
@@ -32,7 +33,7 @@ test('API returns different results for two different player users', async ({ re
   const json2 = await response2.json();
   expect(json2).toHaveProperty('entries');
 
-  // Примерна проверка, че резултатите са различни (ако API връща различни данни за различни userId)
+  // Примерна проверка, че резултатите са различни 
   // Ако не, може да се премахне тази проверка
   expect(JSON.stringify(json1)).not.toBe(JSON.stringify(json2));
 });
