@@ -47,10 +47,16 @@ export class ApiRequestBuilder {
 
   async send(context: any) {
     const fullUrl = this.buildUrlWithParams();
-    return await context.fetch(fullUrl, {
+    let options: any = {
       method: this.method,
       headers: this.headers,
-      data: this.body
-    });
+    };
+    if (this.method !== 'GET' && this.body) {
+      options.data = typeof this.body === 'object' ? JSON.stringify(this.body) : this.body;
+      if (!options.headers['Content-Type']) {
+        options.headers['Content-Type'] = 'application/json';
+      }
+    }
+    return await context.fetch(fullUrl, options);
   }
 }

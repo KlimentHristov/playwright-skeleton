@@ -12,6 +12,7 @@
     "@types/node": "^24.5.2"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "lodash": "^4.17.21",
     "playwright": "^1.55.1",
     "zod": "^4.1.11"

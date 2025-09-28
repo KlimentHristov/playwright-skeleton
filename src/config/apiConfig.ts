@@ -1,8 +1,9 @@
 class ApiConfig {
   private baseUrl: string;
-
+    // e.g., 'https://api.example.com'
   constructor(baseUrl: string) {
-    this.baseUrl = baseUrl;
+    this.baseUrl = baseUrl; 
+    
   }
 
   getUsers(): string {
